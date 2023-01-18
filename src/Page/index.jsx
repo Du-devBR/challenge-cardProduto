@@ -1,5 +1,7 @@
 import './style.sass'
 import sofa from '../assets/img/img-sofa.png'
+import gifSofa from '../assets/img/sofa.gif'
+import vetor360 from '../assets/img/btn-view.png'
 import { useState } from 'react'
 
 export function HomePage(){
@@ -16,21 +18,26 @@ export function HomePage(){
   return(
     <div className="container">
       <div className="container-product">
-        <div className="teste">
+        <div className="change-view-product">
           <button
-            className='button-change-view'
-            onClick={changeButtonView}
-            >
-            {changeView ? 'X' : '360°'}
-        </button>
+              className={changeView ? 'visibility' : 'button-change-view'}
+              onClick={changeButtonView}
+              >
+                <img src={vetor360} alt="" />
+          </button>
+          <button
+              className={changeView ? 'button-close-view' : 'visibility'}
+              onClick={changeButtonView}
+              >
+          </button>
         </div>
-        <img src={sofa} alt="" />
+        <img className='img-product' src={changeView ? gifSofa : sofa} alt="" />
       </div>
       <div className="container-info-sofa">
-        <span>Codigo</span>
-        <h1>Sofa Margot</h1>
-        <span>R$ 4.000</span>
-        <button>Adicionar</button>
+        <span className='code-product'>Codigo</span>
+        <h1 className='name-product'>Sofa Margot</h1>
+        <span className='price-product'>R$ 4.000</span>
+        <button className='btn-add-product-cart'>ADICIONAR À CESTA</button>
       </div>
     </div>
   )

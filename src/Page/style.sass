@@ -7,20 +7,86 @@
     display: flex
     flex-direction: column
 
-    .teste
+    .change-view-product
       display: flex
+      flex-direction: row-reverse
       align-self: flex-end
-      justify-content: center
       margin-right: 40px
+      align-items: center
 
       .button-change-view
-        display: block
+        display: flex
         position: relative
         border: none
-        background-color: #D9CDF7
-        align-self: flex-end
         color: #271A45
         font-size: 18px
         font-weight: bold
         z-index: 1
         cursor: pointer
+        background: transparent
+        transition: 0.6s
+
+      .button-close-view
+        background: #271A45
+        border: none
+        width: 1px
+        height: 16px
+        transform: rotate(45deg)
+        transition: 0.6s
+
+      .button-close-view::before
+        content: ''
+        display: block
+        background: #271A45
+        border: none
+        width: 1px
+        height: 16px
+        transform: rotate(90deg)
+        cursor: pointer
+        transition: 0.6s
+
+      .visibility
+        opacity: 0
+
+    .img-product
+      width: 446px
+      height: 100%
+
+  .container-info-sofa
+    display: flex
+    flex-direction: column
+    gap: 12px
+
+    .code-product
+      text-transform: uppercase
+      font-size: 10px
+      font-weight: 200
+      color: #271A45
+
+    .name-product
+      font-size: 32px
+      font-weight: bold
+      color: #271A45
+
+    .price-product
+      text-transform: uppercase
+      color: #271a45
+      font-weight: 500
+      font-size: 16px
+
+    .btn-add-product-cart
+      font-size: 12px
+      font-weight: 500
+      color: #271a45
+      background-color: transparent
+      text-transform: uppercase
+      padding: 8px 16px
+      border: solid 1px #271a45
+      border-radius: 16px
+      cursor: pointer
+      transition: 0.6s
+
+    .btn-add-product-cart:hover
+      background-color: #271a45
+      color: #D9CDF7
+      transition: 0.6s
